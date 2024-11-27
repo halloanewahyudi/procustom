@@ -11,15 +11,6 @@
 
 
 import gsap from "gsap";
-import Alpine from 'alpinejs'
-window.Alpine = Alpine
-
-Alpine.start()
-
-// nmasthead  scrolled bg-white
-
-
-
 // animasi aksen
 gsap.fromTo('.aksen', { scale: 0 }, { duration: 1, delay:1, scale: 1, stagger: 0.2, ease: 'elastic.out(1, 0.3)' })
 
