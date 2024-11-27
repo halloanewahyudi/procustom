@@ -1,0 +1,30 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `utilities` layer
+ *
+ * Add your own utility classes to this theme. Complex utility classes should
+ * be added using Tailwind’s plugin system:
+ *
+ * https://tailwindcss.com/docs/plugins#adding-utilities
+ */
+
+ /* cf7 */
+ .wpcf7-form p{
+   
+ }
+ .wpcf7-form-control-wrap{
+   
+ }
+ .wpcf7-form-control{
+    @apply ring-1 ring-slate-300 bg-slate-50 text-dark p-2 w-full rounded-lg mb-8 placeholder:text-dark outline-none focus:outline-dark duration-300;
+ }
+ .wpcf7-form-control.wpcf7-submit{
+    @apply max-w-max bg-dark text-slate-200 px-6 mb-0 cursor-pointer hover:bg-slate-700 duration-300 ; 
+ }
+.wpcf7-response-output{
+    @apply text-dark;
+}
+ input[type="text"],
+ input[type="mail"],
+ input[type="tel"]{
+
+ }

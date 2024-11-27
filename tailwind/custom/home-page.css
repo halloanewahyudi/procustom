@@ -1,0 +1,21 @@
+@layer base{
+    #cover {
+        background-image: url('assets/bg-cover.svg');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: contain;
+        @apply text-white lg:text-slate-700 pt-16 lg:pt-24;
+      
+      }
+      
+    .aksen-1{
+        @apply absolute top-10 -left-20;
+    }
+    .aksen-2{
+        @apply  absolute top-1/2 -right-12;
+    }
+    .aksen-3{
+        @apply  absolute -bottom-10 left-6;
+    }
+
+}

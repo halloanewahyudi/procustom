@@ -1,0 +1,26 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ *
+ * “Add things like base typography styles [or] opinionated global resets.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-base-styles
+ */
+
+/**
+ * This uses the background and foreground colors declared in the
+ * `theme.json` file and is applied both to the frontend and in the block
+ * editor.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+body {
+	@apply bg-background text-foreground font-sans;
+	font-family: "Plus Jakarta Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 200-800;
+  font-style: normal;
+}
+
+.btn{
+@apply	py-3 px-6 rounded-full bg-primary text-white hover:bg-primary_hover duration-300;
+}
+

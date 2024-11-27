@@ -1,0 +1,54 @@
+/*!
+Theme Name: procustom
+Theme URI: https://proweb.co.id
+Author: wahyudi
+Author URI: https://underscoretw.com/
+Description: loremipsum
+Version: 0.1.0
+Tested up to: 6.2
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: procustom
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+procustom is based on _tw https://underscoretw.com/, (C) 2021-2024 Greg Sullivan
+_tw is distributed under the terms of the GNU GPL v2 or later.
+
+_tw is based on Underscores https://underscores.me/ and Varia https://github.com/Automattic/themes/tree/master/varia, (C) 2012-2023 Automattic, Inc.
+Underscores and Varia are distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/* loggo */
+
+.custom-logo{
+    @apply h-6 w-auto;
+}
+/*navbar ====================*/
+.navbar{
+    @apply bg-white border-b  lg:bg-transparent lg:border-none;
+}
+.navbar.scrolled{
+    @apply bg-white border-b; 
+}
+/* bidang menu */
+#site-navigation{
+    @apply hidden lg:block;
+}
+#primary-menu{
+    @apply lg:flex items-center gap-5;
+}
+#primary-menu li a{
+    @apply font-medium hover:text-primary duration-300  ;
+}
+#primary-menu li a::after{
+    content: '';
+    @apply w-0 h-0.5 bg-primary block; 
+}
+#primary-menu li a:hover::after, #primary-menu li.curent-menu-item a{
+    content: '';
+    @apply w-full h-0.5 bg-primary  duration-300;
+}
