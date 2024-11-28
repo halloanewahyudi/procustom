@@ -52,7 +52,7 @@ function procustom_get_the_archive_title() {
 		$cpt   = get_post_type_object( get_queried_object()->name );
 		$title = sprintf(
 			/* translators: %s: Post type singular name */
-			esc_html__( '%s Archives', 'procustom' ),
+			esc_html__( '%s ', 'procustom' ),
 			$cpt->labels->singular_name
 		);
 	} elseif ( is_tax() ) {

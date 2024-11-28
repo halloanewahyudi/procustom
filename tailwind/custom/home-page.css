@@ -1,5 +1,5 @@
 @layer base{
-    #cover {
+    #cover{
         background-image: url('assets/bg-cover.svg');
         background-repeat: no-repeat;
         background-position: right top;

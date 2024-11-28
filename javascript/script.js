@@ -12,7 +12,10 @@
 
 import gsap from "gsap";
 // animasi aksen
-gsap.fromTo('.aksen', { scale: 0 }, { duration: 1, delay:1, scale: 1, stagger: 0.2, ease: 'elastic.out(1, 0.3)' })
+gsap.from('.aksen', { duration: 1, delay:1, scale: 0, opacity: 0, stagger: 0.2, ease: 'elastic.out(1, 0.3)' })
+
+gsap.fromTo('.page-header', {  opacity: 0, y: -100 }, { duration: .3,  opacity: 1, y: 0, stagger: 0.2, ease: 'linear' })
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // navbar 

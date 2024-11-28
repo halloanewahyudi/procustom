@@ -13,7 +13,8 @@
         <?php
         $nomor = 1;
         $slide = new WP_Query([
-            'post_type' => 'process'
+            'post_type' => 'process',
+            'order' => 'ASC'
         ]);
         if ($slide->have_posts()): ?>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5 items-center">

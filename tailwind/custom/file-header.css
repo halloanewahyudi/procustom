@@ -31,9 +31,10 @@ Underscores and Varia are distributed under the terms of the GNU GPL v2 or later
 .navbar{
     @apply bg-white border-b  lg:bg-transparent lg:border-none;
 }
-.navbar.scrolled{
-    @apply bg-white border-b; 
+.scrolled{
+    @apply bg-white border-b !important; 
 }
+
 /* bidang menu */
 #site-navigation{
     @apply hidden lg:block;

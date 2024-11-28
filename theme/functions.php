@@ -221,11 +221,57 @@ function enable_webp_support($mimes) {
 	return $mimes;
 }
 
-// disable block editor
-add_filter('use_block_editor_for_post_type', '__return_false');
+// Nonaktifkan editor Gutenberg/Klasik untuk halaman depan (home)
+// Nonaktifkan Gutenberg untuk halaman depan
+function disable_gutenberg_for_home($can_edit, $post) {
+    // Periksa apakah ini adalah halaman depan
+    if ($post && $post->ID == get_option('page_on_front')) {
+        return false; // Nonaktifkan Gutenberg
+    }
+    return $can_edit;
+}
+add_filter('use_block_editor_for_post', 'disable_gutenberg_for_home', 10, 2);
 
-add_action( 'init', function() {
-    remove_post_type_support( 'page', 'editor' );
-}, 99);
+// Nonaktifkan Editor Klasik juga
+function remove_classic_editor_for_home() {
+    $home_id = get_option('page_on_front');
+    $screen = get_current_screen();
 
+    // Periksa apakah ini halaman depan
+    if ($screen->post_type === 'page' && isset($_GET['post']) && $_GET['post'] == $home_id) {
+        remove_post_type_support('page', 'editor');
+    }
+}
+add_action('admin_head', 'remove_classic_editor_for_home');
+
+
+
+// tolong buatlkan paginasi ada arrow nya juga
+
+function pagination($pages = '', $range = 2){  
+  $showitems = ($range * 2)+1; 
+
+  global $paged;
+  if(empty($paged)) $paged = 1;
+
+  if($pages == ''){
+	global $wp_query;
+	$pages = $wp_query->max_num_pages;
+	if(!$pages){
+	  $pages = 1;
+	}
+  } 
+
+  if(1 != $pages){
+		echo "<ul class='pagination flex justify-center items-center gap-4'>";
+		echo "<li class='page-item'><a class='page-link' href='" . get_pagenum_link(1) . "'>&laquo;</a></li>";
+		for ($i=1; $i <= $pages; $i++) {
+			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
+				echo ($paged == $i)? "<li class='page-item active rounded-full bg-primary text-white w-6 h-6 flex justify-center items-center'><span class='page-link'>".$i."</span></li>":"<li class='page-item'><a class='page-link ' href='".get_pagenum_link($i)."'>".$i."</a></li>";
+			}
+		}	
+		echo "<li class='page-item'><a class='page-link' href='" . get_pagenum_link($pages) . "'>&raquo;</a></li>";
+		echo "</ul>";
+	  }		
+  }
 
