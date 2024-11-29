@@ -18,6 +18,10 @@ body {
   font-optical-sizing: auto;
   font-weight: 200-800;
   font-style: normal;
+
+  background-image: url('assets/bg-body.svg');
+  background-repeat: repeat-x;
+
 }
 
 .btn{

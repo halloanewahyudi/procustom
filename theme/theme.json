@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"version": 2,
+	"version": 3,
 	"settings": {
 		"color": {
 			"palette": [
@@ -32,8 +32,8 @@
 			]
 		},
 		"spacing": {
-			"blockGap": null,
-			"contentGap": null,
+			"blockGap": true,
+			"contentGap": true,
 			"padding": true,
 			"margin": true,
 			"units": [
@@ -44,15 +44,26 @@
 				"vw",
 				"%"
 			],
-			"spacingScale": {
-				"extraSmall": "1rem",
-				"small": "2rem",
-				"medium": "3rem",
-				"midlarge": "4rem",
-				"large": "5rem",
-				"xlarge": "6rem",
-				"xxlarge": "7rem"
-			}
+            "spacingSizes": [
+                {
+                    "name": "Small",
+                    "slug": "40",
+                    "size": "1rem"
+                },
+                {
+                    "name": "Medium",
+                    "slug": "50",
+                    "size": "1.5rem"
+                },
+                {
+                    "name": "Large",
+                    "slug": "60",
+                    "size": "2rem"
+                }
+            ]
+		},
+		"typography": {
+			"lineHeight": true
 		},
 		"border": {
 			"width": true,

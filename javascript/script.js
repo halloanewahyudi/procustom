@@ -11,6 +11,43 @@
 
 
 import gsap from "gsap";
+
+// navbar  scroll 
+const header = document.querySelector('.navbar');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+})
+
+// open contact
+const tbContact = document.getElementById('open-contact')
+const contact = document.getElementById('contact')
+tbContact.addEventListener('click',()=>{
+  gsap.from('#contact-form', { duration:1, scale: 0, opacity: 0, stagger: 0.2, ease: 'elastic.out(1, 0.3)' })
+   contact.classList.toggle('open')
+  header.classList.remove('open-menu')
+
+})
+
+const closeContact = document.getElementById('close-contact')
+closeContact.addEventListener('click',function(){
+    contact.classList.remove('open')
+})
+
+// open menu
+const btnMenu = document.getElementById('btn-menu')
+const menu = document.querySelector('.site-menu')
+btnMenu.addEventListener('click',()=>{
+    header.classList.toggle('open-menu')
+    gsap.from('.site-menu', { duration:1, y: -110, opacity: 0, stagger: 0.2, ease: 'elastic.out(0.3, 0.3)' })
+})
+
+// ANIMASI CONTACT FORM
+
+
 // animasi aksen
 gsap.from('.aksen', { duration: 1, delay:1, scale: 0, opacity: 0, stagger: 0.2, ease: 'elastic.out(1, 0.3)' })
 
@@ -34,6 +71,13 @@ document.addEventListener('DOMContentLoaded', function () {
       prev  : 'splide__arrow--prev your-class-prev',
       next  : 'splide__arrow--next your-class-next',
     },
+    breakpoints: {
+      768: {
+         perPage: 1,
+         snap: true,
+         gap:'4rem'
+      }
+   }
   })
   
 
@@ -78,7 +122,13 @@ document.addEventListener('DOMContentLoaded', function () {
     perMove: 1,  
     gap       : '2rem',
     pagination: false,
-    arrows:false
+    arrows:false,
+    breakpoints: {
+      768: {
+         perPage: 2,
+         snap: true
+      }
+   }
   })
 
   slider1.mount();
@@ -86,8 +136,6 @@ document.addEventListener('DOMContentLoaded', function () {
   slider3.mount();
   slider2.sync(slider3);
   slider4.mount();
-
-  
 
 });
 

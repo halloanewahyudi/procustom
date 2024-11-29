@@ -12,7 +12,7 @@ get_header();
             <h1 class="title text-4xl lg:text-6xl"> 
                 Layanan Kami
             </h1>
-          <!--  <p class="sub-title"> Kami membuat website sejak 2010 </p> -->
+           <p class="sub-title"> Kami selalu berupaya memberikan solusi digital terbaik untuk bisnis anda </p>
         </div>
     </div>
 </section>

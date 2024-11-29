@@ -26,10 +26,10 @@ get_header();
 
 				// If comments are open, or we have at least one comment, load
 				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
+			/* 	if ( comments_open() || get_comments_number() ) {
 					comments_template();
 				}
-
+ */
 			endwhile; // End of the loop.
 			?>
 
